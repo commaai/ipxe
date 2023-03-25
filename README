@@ -6,3 +6,19 @@ Quick start guide:
    make
 
 For any more detailed instructions, see http://ipxe.org
+
+containerized build script (optionally enable debugging):
+   ./build.sh
+
+create uefi usb boot drive to test
+   sudo umount /dev/sdX
+   sudo wipefs -a /dev/sdX
+   sudo mkfs.vfat /dev/sdX
+   sudo mount /dev/sdX /mnt/usb
+   sudo mkdir -p /mnt/usb/efi/boot
+   wget -O /mnt/usb/efi/boot/Bootx64.efi https://github.com/tianocore/edk2/blob/UDK2018/ShellBinPkg/UefiShell/X64/Shell.efi
+   sudo cp src/bin-x86_64-efi/ipxe.efi /mnt/usb/ipxe_aqc.efi
+
+boot from usb drive into uefi shell and test ipxe
+   fs0: # may be a different number than 0 depending on other drives in machine
+   ipxe_aqc.efi
