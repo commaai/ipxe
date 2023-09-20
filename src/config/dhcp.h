@@ -19,10 +19,10 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * The PXE spec indicates discover request are sent 4 times, with
  * timeouts of 4, 8, 16, 32 seconds.  iPXE by default uses 1, 2, 4, 8.
  */
-#define DHCP_DISC_START_TIMEOUT_SEC	1
-#define DHCP_DISC_END_TIMEOUT_SEC	10
-//#define DHCP_DISC_START_TIMEOUT_SEC	4	/* as per PXE spec */
-//#define DHCP_DISC_END_TIMEOUT_SEC	32	/* as per PXE spec */
+//#define DHCP_DISC_START_TIMEOUT_SEC	1
+//#define DHCP_DISC_END_TIMEOUT_SEC	10
+#define DHCP_DISC_START_TIMEOUT_SEC	4	/* as per PXE spec */
+#define DHCP_DISC_END_TIMEOUT_SEC	32	/* as per PXE spec */
 
 /*
  * Maximum number of discovery deferrals due to blocked links
